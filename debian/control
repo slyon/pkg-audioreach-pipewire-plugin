@@ -10,8 +10,8 @@ Build-Depends:
  libagm-dev,
  libaudioreach-pal-dev,
  libexpat1-dev,
- libpipewire-0.3-dev,
- libspa-0.2-dev,
+ libpipewire-0.3-dev (>= 1.5.81),
+ libspa-0.2-dev (>= 1.5.81),
  libtinyalsa-dev,
  pkgconf,
 Standards-Version: 4.6.2
