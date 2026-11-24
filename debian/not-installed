@@ -1,2 +1,3 @@
 usr/lib/*/pkgconfig/pw-pal.pc
 usr/lib/*/*.la
+usr/share/pipewire/pipewire-pulse.conf.d/pal-compress-offload-sink.conf

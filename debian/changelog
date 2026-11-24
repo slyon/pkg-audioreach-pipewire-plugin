@@ -4,6 +4,21 @@ audioreach-pipewire-plugin (1.0.2-0qli1~bpo13+3~) UNRELEASED; urgency=medium
 
  -- Debusine Action Bot <noreply@bot.invalid>  Mon, 23 Nov 2026 11:44:30 +0000
 
+audioreach-pipewire-plugin (1.0.3-0qli1) forky; urgency=medium
+
+  [ Debusine Action Bot ]
+  * Unreleased changes
+
+  [ GitHub Service Bot ]
+  * New upstream release v1.0.3
+
+  [ Lukas Märdian ]
+  * Rebuild for libaudioreach-pal2.
+  * d/patches: Refresh.
+  * d/not-installed: Skip pal-compress-offload-sink.conf for now.
+
+ -- Debusine Action Bot <noreply@bot.invalid>  Wed, 18 Nov 2026 14:44:12 +0000
+
 audioreach-pipewire-plugin (1.0.2-0qli1~bpo13+2) trixie; urgency=medium
 
   [ Lukas Märdian ]

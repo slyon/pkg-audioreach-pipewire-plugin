@@ -23,11 +23,9 @@ Signed-off-by: Tejas Vijay Kanfade <tkanfade@qti.qualcomm.com>
  create mode 100644 configs/pw-audioreach-plugin.conf
  delete mode 100644 configs/pw-pal-plugin.conf
 
-diff --git a/Makefile.am b/Makefile.am
-index 9727ab8..5defea6 100644
 --- a/Makefile.am
 +++ b/Makefile.am
-@@ -4,22 +4,22 @@ EXTRA_DIST = $(pkgconfig_DATA)
+@@ -4,23 +4,23 @@
  
  AM_CFLAGS = -Wno-unused-parameter -Wno-unused-result
  
@@ -51,16 +49,14 @@ index 9727ab8..5defea6 100644
  
  install-data-hook:
  	mkdir -p $(DESTDIR)/usr/share/pipewire/pipewire.conf.d/
+ 	mkdir -p $(DESTDIR)/usr/share/pipewire/pipewire-pulse.conf.d/
  	mkdir -p $(DESTDIR)/usr/share/wireplumber/wireplumber.conf.d/
  	mkdir -p $(DESTDIR)/usr/share/wireplumber/scripts/
 -	$(INSTALL_DATA) $(srcdir)/configs/pw-pal-plugin.conf $(DESTDIR)/usr/share/pipewire/pipewire.conf.d/
 +	$(INSTALL_DATA) $(srcdir)/configs/pw-audioreach-plugin.conf $(DESTDIR)/usr/share/pipewire/pipewire.conf.d/
+ 	$(INSTALL_DATA) $(srcdir)/configs/pal-compress-offload-sink.conf $(DESTDIR)/usr/share/pipewire/pipewire-pulse.conf.d/
  	$(INSTALL_DATA) $(srcdir)/configs/60-disable-alsa.conf $(DESTDIR)/usr/share/wireplumber/wireplumber.conf.d/
  	$(INSTALL_DATA) $(srcdir)/configs/90-device-detection.conf  $(DESTDIR)/usr/share/wireplumber/wireplumber.conf.d/
- 	$(INSTALL_DATA) $(srcdir)/configs/90-device-detection.lua  $(DESTDIR)/usr/share/wireplumber/scripts/
-diff --git a/configs/pw-audioreach-plugin.conf b/configs/pw-audioreach-plugin.conf
-new file mode 100644
-index 0000000..6fb5581
 --- /dev/null
 +++ b/configs/pw-audioreach-plugin.conf
 @@ -0,0 +1,176 @@
@@ -96,7 +92,7 @@ index 0000000..6fb5581
 +        stream.props = {
 +            audio.position = [ FL FR ]
 +            codec.type = "mp3"
-+            codec.sample_rate = 44100
++            codec.sample_rate = 48000
 +            codec.bit_rate = 128000
 +            codec.channels = 2
 +            compress.offload = true
@@ -240,9 +236,6 @@ index 0000000..6fb5581
 +    }
 +},
 +]
-diff --git a/configs/pw-pal-plugin.conf b/configs/pw-pal-plugin.conf
-deleted file mode 100644
-index a6d6434..0000000
 --- a/configs/pw-pal-plugin.conf
 +++ /dev/null
 @@ -1,176 +0,0 @@
@@ -278,7 +271,7 @@ index a6d6434..0000000
 -        stream.props = {
 -            audio.position = [ FL FR ]
 -            codec.type = "mp3"
--            codec.sample_rate = 44100
+-            codec.sample_rate = 48000
 -            codec.bit_rate = 128000
 -            codec.channels = 2
 -            compress.offload = true
